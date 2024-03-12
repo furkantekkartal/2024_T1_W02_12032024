@@ -13,25 +13,24 @@ import java.util.Calendar;
 public class Employee {
 
     private String title;               //to store the title of employee
-                                        //use capital letters for naming constants
-    private final String FIRST_NAME;    //to store the first name of employee
+    private final String FIRST_NAME;    //use capital letters for naming constants to store the first name of employee
     private String lastName;            // to store the last name of employee
     private Date birthdate;             //composed of an object of type Date;
-    private Calendar hireDate;          //Calendar is a Java library class which 
-
-                                        //replaces Date.
-                                        // static has class scope
+    private Calendar hireDate;          //Calendar is a Java library class which replaces Date.
+    
+// static has class scope
     private static int employeeCount;   // to store number of employees
-                                        //Overloaded constructors
-                                        //no argument constructor
+    
 
+//Overloaded constructors
+
+//no argument constructor
     public Employee() {
         this("undefined", "undefined", "");
-                                        // increment count of employees created will occur in the constructor called
-                                        // using this in the above statement.
+        // increment count of employees created will occur in the constructor called using this in the above statement.
     }
 
-                                        // parameterised constructor
+// parameterised constructor
     /**
      *
      * @param title
@@ -45,8 +44,9 @@ public class Employee {
             ++employeeCount;            // increment count of employees created.
 
     }                                   // end of Constructor
-                                        // another constructor to create an employee with dates
 
+
+// another constructor to create an employee with dates
     /**
      *
      * @param title
@@ -65,8 +65,7 @@ public class Employee {
 
                                         //copy constructor
     public Employee(Employee another) {
-                                        //invokes the parmeterised constructor with attribute 
-                                        //values of another
+                                        //invokes the parmeterised constructor with attribute values of another
         this(another.title, another.FIRST_NAME,
                 another.lastName, another.birthdate, another.hireDate);
     }
@@ -74,8 +73,11 @@ public class Employee {
 
     @Override
     public String toString() {
-        return String.format("%s %s %s BirthDate: %s, HireDate: %s", this.getTitle(), this.getFirstName(),
-                this.getLastName(), this.getBirthdate().toString(),
+        return String.format("%s %s %s BirthDate: %s, HireDate: %s", 
+                this.getTitle(), 
+                this.getFirstName(),
+                this.getLastName(), 
+                this.getBirthdate().toString(),
                 this.getHireDate().getTime().toString());
     }
     
